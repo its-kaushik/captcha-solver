@@ -1,0 +1,20 @@
+{
+  "name": "captcha-solver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "install": "concurrently \"npm run install-server\" \"npm run install-client\" ",
+    "server": "npm run watch --prefix server",
+    "client": "npm run start --prefix client",
+    "watch": "concurrently \"npm run server\" \"npm run client\" ",
+    "deploy": "concurrently \"npm run build --prefix client\" \"npm start --prefix server\" "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
